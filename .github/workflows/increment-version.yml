@@ -1,0 +1,27 @@
+name: Increment version and create commit
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  increment-version-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Increment version and create commit
+        run: |
+          VERSION_FILE="version.txt"
+          if [ ! -f "$VERSION_FILE" ]; then
+            echo 0 > "$VERSION_FILE"
+          fi
+          VERSION=$(cat "$VERSION_FILE")
+          NEXT_VERSION=$((VERSION + 1))
+          echo $NEXT_VERSION > "$VERSION_FILE"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "GitHub Actions"
+          git add "$VERSION_FILE"
+          git commit -m "$(tput setaf 4) (# $NEXT_VERSION$)(tput sgr0)"
+          git push origin main
