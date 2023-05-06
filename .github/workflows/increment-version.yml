@@ -20,8 +20,9 @@ jobs:
           VERSION=$(cat "$VERSION_FILE")
           NEXT_VERSION=$((VERSION + 1))
           echo $NEXT_VERSION > "$VERSION_FILE"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config user.name "GitHub Actions"
+          git config user.email "koleajeolayinka@gmail.com"
+          git config user.name "KOLEAJEOLAYINKA"
           git add "$VERSION_FILE"
           git commit -m "$(tput setaf 4) (# $NEXT_VERSION$)(tput sgr0)"
           git push origin main
+          echo "Pushed changes to remote repository"
