@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 body {
     margin: 0 auto;
     padding: 0;
@@ -7,19 +8,11 @@ body {
 
 }
 
+
 /* Mobile styles */
-.header {
-    display: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 80px;
-    background-color: #FFFF;
-    padding: 0 16px;
-    /* border: 10px solid navy; */
 
-}
 
+/* Tablet and desktop styles */
 .left-nav {
     margin-left: 2.5rem;
 
@@ -66,93 +59,128 @@ body {
     margin-left: 16px;
 }
 
-
-/* Tablet and desktop styles */
-
-
-@media (min-width: 768px) {
-    .header {
-        height: 80px;
-        padding: 0 32px;
-    }
-
-    .left-nav ul,
-    .right-nav ul {
-        display: flex;
-        align-items: center;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        gap: 32px;
-        color: #000000;
-        font-weight: bolder;
-        
-    }
-
-    .left-nav ul {
-        flex-basis: 25%;
-        justify-content: space-between;
-    }
-
-    .right-nav ul {
-        flex-basis: 20%;
-        justify-content: flex-end;
-    }
-
-    .middle-icon {
-        flex-basis: 50%;
-    }
-
-    .titleBlock>h1 {
-        height: 68px;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 42px;
-        line-height: 160%;
-        margin: 2rem 0 3rem 0;
-
-        /* identical to box height, or 67px */
-        display: flex;
-        align-items: center;
-
-        /* --c-text */
-        color: #1D1F22;
-
-
-    }
-
-    .product-cart {
-        /* border: 1px solid navy; */
-        width: 386px;
-        height: 444px;
-        margin: 0 0 0 1.5rem;
-    }
-
-    main {
-        /* border: 20px solid navy; */
-        margin-left: 3rem;
-        margin-right: 6rem;
-    }
-
-    .product-name>p {
-        width: 354px;
-        height: 29px;
-        font-style: normal;
-        font-weight: 300;
-        font-size: 18px;
-        line-height: 160%;
-        display: flex;
-        align-items: center;
-        color: #1D1F22;
-    }
-
-    .price>p {
-        height: 29px;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 160%;
-        text-align: left;
-        color: #1D1F22;
-    }
+::-webkit-scrollbar {
+    width: 8px;
+    height: 1px;
 }
+
+::-webkit-scrollbar-thumb {
+    background: #FFFF;
+    /* border-radius: 4px; */
+}
+
+::-webkit-scrollbar-track {
+    background: #1D1F22;
+    border-radius: 4px;
+}
+
+.scrollbar-container {
+    width: 100%;
+    height: 75vh;
+    overflow-y: scroll;
+}
+
+.scrollbar-content {
+    width: calc(100% - 17px);
+    height: auto;
+    padding-right: 17px;
+}
+
+.header {
+    height: 80px;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    background-color: #FFFF;
+    padding: 0 16px;
+}
+
+.left-nav ul,
+.right-nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 32px;
+    color: #000000;
+    font-weight: bolder;
+
+}
+
+.left-nav ul {
+    flex-basis: 25%;
+    justify-content: space-between;
+}
+
+.right-nav ul {
+    flex-basis: 20%;
+    justify-content: flex-end;
+}
+
+.middle-icon {
+    flex-basis: 50%;
+}
+
+.titleBlock>h1 {
+    height: 68px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 160%;
+    margin: 2rem 0 3rem 0;
+
+    /* identical to box height, or 67px */
+    display: flex;
+    align-items: center;
+
+    /* --c-text */
+    color: #1D1F22;
+
+
+}
+
+.product-cart {
+    /* border: 1px solid navy; */
+    width: 386px;
+    height: 444px;
+    margin: 0 0 0 1.5rem;
+}
+
+main {
+    /* border: 20px solid navy; */
+    margin-left: 3rem;
+    margin-right: 6rem;
+}
+
+.product-name>p {
+    width: 354px;
+    height: 29px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 160%;
+    display: flex;
+    align-items: center;
+    color: #1D1F22;
+}
+
+.price>p {
+    height: 29px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 160%;
+    text-align: left;
+    color: #1D1F22;
+}
+
+.productData {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+@media (max-width: 767px) {}

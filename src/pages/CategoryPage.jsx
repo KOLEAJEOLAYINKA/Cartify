@@ -2,8 +2,9 @@ import React from "react";
 import Logo from "../assets/a-logo.svg";
 import Vector from "../assets/Vector.svg";
 import EmptyCart from "../assets/EmptyCart.svg";
-import ProductA from "../assets/ProductD.svg"
-
+import ProductA from "../assets/ProductD.svg";
+import { ProductData } from "../container/data";
+import ScrollBar from "../components/ScrollBar";
 
 const CategoryPage = () => {
   return (
@@ -23,7 +24,7 @@ const CategoryPage = () => {
           <ul>
             <li>
               <button>
-                $
+                <h1>$</h1>
                 <span>
                   <img src={Vector} alt={"Loading ..."} />
                 </span>
@@ -40,23 +41,26 @@ const CategoryPage = () => {
           <div className={"titleBlock"}>
             <h1>Category name</h1>
           </div>
-          <div className="product-cart">
-            <div className="productImg">
-              <img src={ProductA} alt={""} />
-            </div>
-            <div className="product-name">
-              <p>Apollo Running Short</p>
-            </div>
-            <div className="price">
-              <p>$50.00</p>
-            </div>
+          <ScrollBar>
+          <div className="productData">
+          {ProductData.map((id, item) => (
+              <div className="product-cart">
+                <div className="productImg">
+                  <img src={ProductData[item].image} alt={""} />
+                </div>
+                <div className="product-name">
+                  <p>{ProductData[item].name}</p>
+                </div>
+                <div className="price">
+                <p>${ProductData[item].price}</p>
+                </div>
+              </div>
+          ))}
+            
           </div>
+          </ ScrollBar>
         </div>
       </main>
-      
-      {/* <dialog>
-        HI<h1>oops</h1>
-      </dialog> */}
     </div>
   );
 };
