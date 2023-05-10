@@ -8,11 +8,6 @@ body {
 
 }
 
-
-/* Mobile styles */
-
-
-/* Tablet and desktop styles */
 .left-nav {
     margin-left: 2.5rem;
 
@@ -48,7 +43,9 @@ body {
     display: flex;
     align-items: center;
 }
-
+.right-nav {
+    padding-right: 5rem;
+}
 .right-nav button img {
     /* height: 16px; */
     margin-left: 4px;
@@ -97,6 +94,14 @@ body {
     padding: 0 16px;
 }
 
+.left-nav ul {
+    gap: 32px;
+}
+
+.right-nav ul {
+    gap: 12px;
+}
+
 .left-nav ul,
 .right-nav ul {
     display: flex;
@@ -104,7 +109,7 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 32px;
+    /* gap: 32px; */
     color: #000000;
     font-weight: bolder;
 
@@ -180,7 +185,21 @@ main {
 .productData {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+    /* grid-gap: 20px; */
 }
+
+.CartBar-btn {
+    /* margin-left: -10rem; */
+}
+
+
+
+
+/*****************
+
+ Mobile styles 
+
+ *****************/
+
 
 @media (max-width: 767px) {}
